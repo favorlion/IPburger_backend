@@ -8,13 +8,11 @@ require('dotenv-safe').load({
 
 module.exports = {
   env: process.env.NODE_ENV,
-  port: process.env.PORT,
-  jwtSecret: process.env.JWT_SECRET,
-  jwtExpirationInterval: process.env.JWT_EXPIRATION_MINUTES,
+  port: 80,
+  jwtSecret: "bA2xcjpf8y5aSUFsNB2qN5yymUBSs6es3qHoFpGkec75RCeBb8cpKauGefw5qy4",
+  jwtExpirationInterval: 1440,
   mongo: {
-    uri: process.env.NODE_ENV === 'test'
-      ? process.env.MONGO_URI_TESTS
-      : process.env.MONGO_URI,
+    uri: "mongodb+srv://Favorlion:favorlion@cluster0-nlpc3.mongodb.net/ipburger?retryWrites=true"
   },
   logs: process.env.NODE_ENV === 'production' ? 'combined' : 'dev',
 };
